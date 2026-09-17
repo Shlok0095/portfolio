@@ -6,6 +6,7 @@ import {
   EMAIL,
   GITHUB_URL,
   LINKEDIN_CERTS_URL,
+  LINKEDIN_HANDLE,
   LINKEDIN_URL,
   PHONE_DISPLAY,
   PHONE_TEL,
@@ -37,7 +38,7 @@ const Contact = () => {
                 rel="noreferrer"
                 data-cursor="disable"
               >
-                LinkedIn — shlok-kumar-1971s
+                LinkedIn — {LINKEDIN_HANDLE}
               </a>
             </p>
             <p>

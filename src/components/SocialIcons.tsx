@@ -8,7 +8,9 @@ import {
   GITHUB_URL,
   LINKEDIN_CERTS_URL,
   LINKEDIN_URL,
+  RESUME_PDF_PATH,
 } from "../data/profile";
+import { publicUrl } from "../lib/publicUrl";
 
 const SocialIcons = () => {
   useEffect(() => {
@@ -83,8 +85,10 @@ const SocialIcons = () => {
       </div>
       <a
         className="resume-button"
-        href={`mailto:${EMAIL}?subject=Resume%20request`}
+        href={publicUrl(RESUME_PDF_PATH)}
+        target="_blank"
         rel="noreferrer"
+        download="Shlok-Kumar-Resume.pdf"
       >
         <HoverLinks text="RESUME" />
         <span>
