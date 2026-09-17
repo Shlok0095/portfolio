@@ -108,7 +108,9 @@ export const GITHUB_HIGHLIGHTS =
 
 
 
-export const ABOUT_TEXT = `${RESUME_SUMMARY} ${EDUCATION} ${CERTIFICATION_HIGHLIGHT}. ${GITHUB_HIGHLIGHTS}`;
+/** About section — keep short; full detail lives in résumé + career. */
+export const ABOUT_TEXT =
+  "I ship ML, LLMs, and computer vision for real clients — RAG, OCR, YOLO, and production APIs. 4+ years across software and data science, with wins like 65% faster support and 15+ enterprise builds.";
 
 
 
