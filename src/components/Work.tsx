@@ -3,48 +3,49 @@ import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 import { GITHUB_URL } from "../data/profile";
+import { publicUrl } from "../lib/publicUrl";
 
 const projects = [
   {
     title: "PDF QA chatbot",
     category: "RAG · vector search",
     tools: "Cohere, FAISS, Python",
-    image: "/images/placeholder.webp",
+    image: publicUrl("images/placeholder.webp"),
     link: `${GITHUB_URL}/QA_Chatbot_PDF_upload`,
   },
   {
     title: "Toxicity · Gradio",
     category: "NLP · model UI",
     tools: "Gradio, transformers, traceability",
-    image: "/images/placeholder.webp",
+    image: publicUrl("images/placeholder.webp"),
     link: `${GITHUB_URL}/Comment_Toxicity-model-along-with-Graduio-simple-app-to-trace`,
   },
   {
     title: "Diffusion + UNet",
     category: "Generative image models",
     tools: "PyTorch, UNet, training loops",
-    image: "/images/placeholder.webp",
+    image: publicUrl("images/placeholder.webp"),
     link: `${GITHUB_URL}/Diffusionmodel_usingpytorch_and_UNEtNetwork1-`,
   },
   {
     title: "Extractive summarization",
     category: "NLP · document compression",
     tools: "Python, sentence selection",
-    image: "/images/placeholder.webp",
+    image: publicUrl("images/placeholder.webp"),
     link: `${GITHUB_URL}/Text_summerization_technique`,
   },
   {
     title: "Neural style transfer",
     category: "Computer vision",
     tools: "PyTorch, style nets",
-    image: "/images/placeholder.webp",
+    image: publicUrl("images/placeholder.webp"),
     link: `${GITHUB_URL}/Prodigy-Task-05`,
   },
   {
     title: "Nasdaq ticker RNN",
     category: "Time series · forecasting",
     tools: "LSTM, GRU, SimpleRNN, JSON pipelines",
-    image: "/images/placeholder.webp",
+    image: publicUrl("images/placeholder.webp"),
     link: `${GITHUB_URL}/Stock-MArket-prediction-for-each-Stock-ticker-nasdaq-`,
   },
 ];

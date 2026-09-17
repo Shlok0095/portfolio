@@ -12,11 +12,12 @@ import {
 } from "@react-three/rapier";
 
 import { TECH_STACK_TEXTURES } from "../data/techStack";
+import { publicUrl } from "../lib/publicUrl";
 
 const textureLoader = new THREE.TextureLoader();
 
 const textures = TECH_STACK_TEXTURES.map((url) => {
-  const tex = textureLoader.load(url);
+  const tex = textureLoader.load(publicUrl(url));
   tex.colorSpace = THREE.SRGBColorSpace;
   return tex;
 });
@@ -198,7 +199,7 @@ const TechStack = () => {
           ))}
         </Physics>
         <Environment
-          files="/models/char_enviorment.hdr"
+          files={publicUrl("models/char_enviorment.hdr")}
           environmentIntensity={0.5}
           environmentRotation={[0, 4, 2]}
         />
