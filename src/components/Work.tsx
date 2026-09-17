@@ -2,53 +2,13 @@ import { useState, useCallback } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
-import { GITHUB_URL } from "../data/profile";
+import { WORK_PROJECTS } from "../data/profile";
 import { publicUrl } from "../lib/publicUrl";
 
-const projects = [
-  {
-    title: "PDF QA chatbot",
-    category: "RAG · vector search",
-    tools: "Cohere, FAISS, Python",
-    image: publicUrl("images/placeholder.webp"),
-    link: `${GITHUB_URL}/QA_Chatbot_PDF_upload`,
-  },
-  {
-    title: "Toxicity · Gradio",
-    category: "NLP · model UI",
-    tools: "Gradio, transformers, traceability",
-    image: publicUrl("images/placeholder.webp"),
-    link: `${GITHUB_URL}/Comment_Toxicity-model-along-with-Graduio-simple-app-to-trace`,
-  },
-  {
-    title: "Diffusion + UNet",
-    category: "Generative image models",
-    tools: "PyTorch, UNet, training loops",
-    image: publicUrl("images/placeholder.webp"),
-    link: `${GITHUB_URL}/Diffusionmodel_usingpytorch_and_UNEtNetwork1-`,
-  },
-  {
-    title: "Extractive summarization",
-    category: "NLP · document compression",
-    tools: "Python, sentence selection",
-    image: publicUrl("images/placeholder.webp"),
-    link: `${GITHUB_URL}/Text_summerization_technique`,
-  },
-  {
-    title: "Neural style transfer",
-    category: "Computer vision",
-    tools: "PyTorch, style nets",
-    image: publicUrl("images/placeholder.webp"),
-    link: `${GITHUB_URL}/Prodigy-Task-05`,
-  },
-  {
-    title: "Nasdaq ticker RNN",
-    category: "Time series · forecasting",
-    tools: "LSTM, GRU, SimpleRNN, JSON pipelines",
-    image: publicUrl("images/placeholder.webp"),
-    link: `${GITHUB_URL}/Stock-MArket-prediction-for-each-Stock-ticker-nasdaq-`,
-  },
-];
+const projects = WORK_PROJECTS.map((project) => ({
+  ...project,
+  image: publicUrl("images/placeholder.webp"),
+}));
 
 const Work = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -143,8 +103,9 @@ const Work = () => {
             {projects.map((_, index) => (
               <button
                 key={index}
-                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""
-                  }`}
+                className={`carousel-dot ${
+                  index === currentIndex ? "carousel-dot-active" : ""
+                }`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to project ${index + 1}`}
                 data-cursor="disable"

@@ -1,4 +1,9 @@
 import { PropsWithChildren } from "react";
+import {
+  LANDING_ROLE_LINE,
+  LANDING_WORD_A,
+  LANDING_WORD_B,
+} from "../data/profile";
 import "./styles/Landing.css";
 
 const Landing = ({ children }: PropsWithChildren) => {
@@ -15,14 +20,14 @@ const Landing = ({ children }: PropsWithChildren) => {
             </h1>
           </div>
           <div className="landing-info">
-            <h3>Data Scientist &</h3>
+            <h3>{LANDING_ROLE_LINE}</h3>
             <h2 className="landing-info-h2">
-              <div className="landing-h2-1">ML</div>
-              <div className="landing-h2-2">Python</div>
+              <div className="landing-h2-1">{LANDING_WORD_A}</div>
+              <div className="landing-h2-2">{LANDING_WORD_B}</div>
             </h2>
             <h2>
-              <div className="landing-h2-info">Python</div>
-              <div className="landing-h2-info-1">ML</div>
+              <div className="landing-h2-info">{LANDING_WORD_B}</div>
+              <div className="landing-h2-info-1">{LANDING_WORD_A}</div>
             </h2>
           </div>
         </div>

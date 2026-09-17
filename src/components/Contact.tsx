@@ -1,6 +1,7 @@
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
 import {
+  CERTIFICATION_HIGHLIGHT,
   DISPLAY_NAME,
   EMAIL,
   GITHUB_URL,
@@ -46,7 +47,7 @@ const Contact = () => {
                 rel="noreferrer"
                 data-cursor="disable"
               >
-                LinkedIn certifications
+                {CERTIFICATION_HIGHLIGHT}
               </a>
             </p>
           </div>

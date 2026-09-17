@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./styles/WhatIDo.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { WHAT_I_DO } from "../data/profile";
 
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -58,92 +59,51 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-
-            <div className="what-content-in">
-              <h3>ML &amp; GENAI</h3>
-              <h4>Models, evals, and retrieval-first apps</h4>
-              <p>
-                End-to-end experimentation: PyTorch and Hugging Face stacks, RAG-style
-                flows with vector search, toxicity and sentiment systems, and
-                notebook-to-pipeline discipline with leakage checks and benchmarks.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">PyTorch · HF</div>
-                <div className="what-tags">RAG · FAISS</div>
-                <div className="what-tags">LangChain-style glue</div>
-                <div className="what-tags">BERT · NLP</div>
-                <div className="what-tags">Eval harnesses</div>
-                <div className="what-tags">Diffusion POCs</div>
+          {WHAT_I_DO.map((block, index) => (
+            <div
+              key={block.title}
+              className="what-content what-noTouch"
+              ref={(el) => setRef(el, index)}
+            >
+              <div className="what-border1">
+                <svg height="100%">
+                  <line
+                    x1="0"
+                    y1="0"
+                    x2="100%"
+                    y2="0"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeDasharray="6,6"
+                  />
+                  <line
+                    x1="0"
+                    y1="100%"
+                    x2="100%"
+                    y2="100%"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeDasharray="6,6"
+                  />
+                </svg>
               </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>PYTHON SERVICES</h3>
-              <h4>Data planes and thin HTTP adapters</h4>
-              <p>
-                Async-friendly FastAPI and Flask shells, pydantic contracts, pandas
-                ETL, Postgres and SQLite analytics, Dockerized builds, and GitHub-first
-                workflows—pragmatic services without Django-heavy footprints.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">FastAPI · Flask</div>
-                <div className="what-tags">Python · asyncio</div>
-                <div className="what-tags">PostgreSQL · SQL</div>
-                <div className="what-tags">Pandas · Parquet</div>
-                <div className="what-tags">Docker</div>
-                <div className="what-tags">GCP · AWS sandboxes</div>
+              <div className="what-corner"></div>
+              <div className="what-content-in">
+                <h3>{block.title}</h3>
+                <h4>{block.subtitle}</h4>
+                <p>{block.body}</p>
+                <h5>Skillset & tools</h5>
+                <div className="what-content-flex">
+                  {block.tags.map((tag) => (
+                    <div className="what-tags" key={tag}>
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+                <div className="what-arrow"></div>
               </div>
-              <div className="what-arrow"></div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

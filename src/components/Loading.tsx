@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles/Loading.css";
 import { useLoading } from "../context/LoadingProvider";
+import { LANDING_MARQUEE, NAV_INITIALS } from "../data/profile";
 
 import Marquee from "react-fast-marquee";
 
@@ -46,7 +47,7 @@ const Loading = ({ percent }: { percent: number }) => {
     <>
       <div className="loading-header">
         <a href="/#" className="loader-title" data-cursor="disable">
-          AM
+          {NAV_INITIALS}
         </a>
         <div className={`loaderGame ${clicked && "loader-out"}`}>
           <div className="loaderGame-container">
@@ -62,8 +63,9 @@ const Loading = ({ percent }: { percent: number }) => {
       <div className="loading-screen">
         <div className="loading-marquee">
           <Marquee>
-            <span> Full Stack Developer</span> <span>Software Engineer</span>
-            <span> Full Stack Developer</span> <span>Software Engineer</span>
+            {LANDING_MARQUEE.map((line) => (
+              <span key={line}> {line}</span>
+            ))}
           </Marquee>
         </div>
         <div
